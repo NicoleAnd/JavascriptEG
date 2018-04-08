@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字缓慢显示</title>
+	<style type="text/css">
+		body{background-color: #000;}
+		p{text-align: center;color:#fff;font-size: 20px;display: none;}
+	</style>
+</head>
+<body>
+	<p>命运就算曲折离奇</p>
+	<p>命运就算恐吓着你做人没趣味</p>
+	<p>别流泪心酸更不应舍弃</p>
+	<p>我愿能一生永远陪伴你</p>
+	<p>一生之中兜兜转转 那会看清楚</p>
+	<p>彷徨时我也试过独坐一角像是没协助</p>
+	<p>在某年 那幼小的我</p>
+	<p>跌倒过几多几多落泪在雨夜滂沱</p>
+	<p>一生之中弯弯曲曲我也要走过</p>
+	<p>从何时有你有你伴我给我热烈地拍和</p>
+	<p>像红日之火 燃点真的我</p>
+	<p>结伴行 千山也定能踏过</p>
+	<p>让晚风 轻轻吹过</p>
+	<p>伴送着清幽花香像是在祝福你我</p>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$("p").each(function(i,el){
+			$(this).delay(1000*i).fadeIn(2000);
+		});
+	</script>
+</body>
+</html>

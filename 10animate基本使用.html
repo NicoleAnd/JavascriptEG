@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animate基本使用</title>
+	<style type="text/css">
+		div{width: 200px;height: 200px;background-color: orange;position: relative;;margin-bottom: 10px;left: 0;top: 0;}
+	</style>
+</head>
+<body>
+	<div class="wrap1"></div>
+	<div class="wrap2"></div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(".wrap1").animate({
+			"left":"1000px",
+			"width":"300px",
+			"heihg":"300px",
+			"opacity":"0.1",
+			"background-color":"#f00"
+		},1000);
+		$(".wrap2").animate({
+			"left":"1000px"
+		},2000,function(){
+			console.log(this); // 动画的元素
+		});
+		$(".wrap1").css("background-color","blue");
+	</script>
+</body>
+</html>

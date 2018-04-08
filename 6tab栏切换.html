@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>tab栏切换</title>
+	<style type="text/css">
+	    * {
+	    	padding: 0;
+	    	margin: 0;
+	    } 
+
+	    .wrap {
+	    	width: 310px;
+	    	border-top: 2px solid #f40;
+	    	margin: 100px auto;
+	    }
+
+	    .wrap .top {
+	    	height: 30px;
+	    	line-height: 30px;
+	    	text-align: center;
+	    	border-left: 1px solid #ccc;
+	    }
+
+	    .wrap .top a {
+	    	float: left;
+	    	width: 102px;
+	    	height: 30px;
+	    	border-bottom: 1px solid #ccc;
+	    	border-right: 1px solid #ccc;
+	    	text-decoration: none;
+	    }
+
+	    .wrap .top a.current {
+	    	background-color: #f40;
+	    	color: #fff;
+	    }
+
+	    .wrap .bottom div {
+	    	height: 146px;
+	    	background-color: pink;
+	    	display: none; 
+	    }
+
+	    .wrap .bottom div.current {
+	    	display: block;
+	    }
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="top" id="top">
+			<a href="#" class="current">体育</a>
+			<a href="#">财经</a>
+			<a href="#">科技</a>
+		</div>
+		<div class="bottom" id="bottom">
+			<div class="current">体育部分</div>
+			<div>财经部分</div>
+			<div>科技部分</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// tab栏切换 点击不同的菜单 显示对应的区域
+		// 大致思路
+		// 给所有的菜单绑定鼠标移上去事件，显示对应的区域
+		// 1 找相关元素
+		var top_div = document.getElementById("top");
+		var titles = top_div.getElementsByTagName("a");
+		var bottom_div = document.getElementById("bottom");
+		var contents = bottom_div.getElementsByTagName("div");
+		for(var i=0;i<titles.length;i++){
+			// *****自定义属性值记住index
+			titles[i].index = i;
+			titles[i].onclick = function(){
+				// ******排他思想
+				// 显示菜单对应的div 隐藏其他的div
+				// 1 先隐藏所有的内容
+				for(var j=0;j<contents.length;j++){
+					contents[j].style.display = "none";
+					// 对菜单样式进行控制
+					titles[j].className = "";
+				}
+				this.className = "current";
+				// 2 然后单独对对应的div设置显示
+				contents[this.index].style.display = "block";
+			}
+		}
+	</script>
+</body>
+</html>

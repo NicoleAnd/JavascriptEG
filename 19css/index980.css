@@ -1,0 +1,5 @@
+header{width: 980px;}
+header nav{width: 620px}
+.main{width: 980px;}
+.main .col{width:180px;}
+.main .hide-980{display: none;}

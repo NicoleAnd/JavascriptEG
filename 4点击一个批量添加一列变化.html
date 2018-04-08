@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>批量添加事件</title>
+	<style type="text/css">
+		*{padding:0;margin:0;}
+		div{width:500px;height:80px;border:1px solid #000;margin-bottom:14px;}
+		p{width:100px;height:80px;float:left;margin-right:10px;background:blue;}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<p>111</p>
+		<p>222</p>
+		<p>333</p>
+		<p>444</p>
+	</div>
+	<div id="box2">
+		<p>555</p>
+		<p>666</p>
+		<p>777</p>
+		<p>888</p>	
+	</div>
+	<script type="text/javascript">
+		// 排他法思想很重要
+		// 单击上面一组任何一个p元素，背景色变天蓝，对应下面一组的某个p元素背景色变成红色，其他上下组还原原来的样子
+		// 1 获取所有的事件源（上面一组p）
+		var box1 = document.getElementById("box1");
+		var box2 = document.getElementById("box2");
+		var p1 = box1.getElementsByTagName("p");
+		var p2 = box2.getElementsByTagName("p");
+
+		// 2 所有事件源绑定事件
+		for(var i=0;i<p1.length;i++){
+			p1[i].index = i;
+			p1[i].onclick = function(){
+				// 排他思想------干掉所有人 最后单独对自己设置
+				// 先对第一组和第二组所有元素p进行背景色还原
+				// ******
+				for(var j=0;j<p1.length;j++){
+					p1[j].style.backgroundColor = "blue";
+					p2[j].style.backgroundColor = "blue";
+				}
+				// 自己变成天蓝色
+				this.style.backgroundColor = "skyblue";
+				// 其他变成粉红色
+				p2[this.index].style.backgroundColor = "pink";
+			}
+		}
+	</script>
+</body>
+</html>
+
+

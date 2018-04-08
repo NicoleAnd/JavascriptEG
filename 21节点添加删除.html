@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		div{margin: 0 10px;}
+		.container{width: 100%;height: 100%;margin: 0 auto;}
+		.wrap1,.wrap2{width: 200px;height: 300px;border: 1px solid #000;float: left;}
+		.btn{width: 50px;height: 100px;float: left;}
+		.btn button{height: 25px;margin-top: 20px;border:1px solid skyblue;border-radius: 5px;background-color: skyblue;color: #333;}
+		.wrap p{margin: 10px 0 0 20px;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="wrap1">
+			<p><input type="checkbox" name="box" value="" />乌龟</p>
+  			<p><input type="checkbox" name="box" value="" />牛肉</p>
+  			<p><input type="checkbox" name="box" value="" />鸡肉</p>
+  			<p><input type="checkbox" name="box" value="" />猪肉</p>
+  			<p><input type="checkbox" name="box" value="" />芹菜</p>
+  			<p><input type="checkbox" name="box" value="" />土豆</p>
+  			<p><input type="checkbox" name="box" value="" />番茄</p>
+  			<p><input type="checkbox" name="box" value="" />黄瓜</p>
+  			<p><input type="checkbox" name="box" value="" />馒头</p>
+  			
+		</div>
+		<div class="btn">
+			<button class="btn1" onclick="leftFun()">>>>>>></button>
+			<button class="btn2" onclick="rightFun()"><<<<<<</button>
+		</div>
+		<div class="wrap2">
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$('.btn1').onclick() = leftFun;
+		$('.btn1').onclick() = rightFun;
+		function leftFun(){
+			$('.wrap1 input:checkbox:checked').each(function(){
+				var n = $(this).parents().index();
+				$('.wrap1').find("p:eq("+n+")").appendTo($('.wrap2'));
+			});
+		}
+
+		function rightFun(){
+			$('.wrap2 input:checkbox:checked').each(function(){
+				var n = $('.wrap2 p input:checked').parents().index();
+				$('.wrap2').find("p:eq("+n+")").appendTo('.wrap1');
+			});
+		
+
+		}
+	</script>
+</body>
+</html>

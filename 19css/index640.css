@@ -1,0 +1,6 @@
+header{width:640px;height:140px;}
+header .logo{float:none;margin:0 auto;height:60px;}
+header nav{float:none;width:640px;height:60px;overflow:hidden;}
+header li.s{display: none;}
+.main{width: 640px;}
+.main .col{margin-bottom: 10px;}

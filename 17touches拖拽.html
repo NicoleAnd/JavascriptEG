@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name=viewport content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<style type="text/css">
+		body{margin:0;padding:0;}
+		img{width: 100px;position: absolute;top: 0;left: 0;}
+	</style>
+</head>
+<body>
+	<img src="7img/01.jpg">
+	<script type="text/javascript">
+		// 得到图片
+		var img = document.querySelector("img");
+		// 手指距离图片左上角的误差
+		var deltaX,deltaY;
+		// 开始触摸
+		document.addEventListener("touchstart",function(event){
+			deltaX = event.touches[0].clientX;
+			deltaY = event.touches[0].clientY;
+			//console.log(deltaX+"***"+deltaY);
+		},false);
+		// 触摸移动
+		document.addEventListener("touchmove",function(event){
+			img.style.left = event.touches[0].clientX - deltaX + "px";
+			img.style.top = event.touches[0].clientY - deltaY + "px";
+		},false);
+		// 触摸结束
+		document.addEventListener("touchend",function(event){
+			img.style.left = 0 + "px";
+			img.style.top = 0 + "px";
+		},false);
+	</script>
+</body>
+</html>

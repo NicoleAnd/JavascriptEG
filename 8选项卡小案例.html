@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单选项卡案例</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.tab{width: 240px;height: 200px;border: 1px solid #000;margin: 100px auto;}
+		.tab .menu{height: 30px;}
+		.tab .menu span{display: block;float: left;width: 79px;height: 30px;line-height: 30px;text-align: center;font-weight: 700;border-right: 1px solid #ccc;background-color: pink;cursor: pointer;}
+		.tab .menu span.current{color:#fff;}
+		.tab .content div{width: 240px;height: 170px;display: none;}
+		.tab .content div.current{display: block;}
+	</style>
+</head>
+<body>
+	<div class="tab">
+		<div class="menu">
+			<span class="current">新闻</span>
+			<span>体育</span>
+			<span>娱乐</span>
+		</div>
+		<div class="content">
+			<div class="current">新闻内容：家里的积分卡了积分单身快乐富家大室离开</div>
+			<div>体育内容：SD卡狂蜂浪蝶师父记得开始第四大发顺丰 啊四大佛挡杀佛</div>
+			<div>娱乐新闻：懒得说看风景爽口的金风科技单身快乐放假啦是阿斯蒂芬</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		// 给每个菜单绑定鼠标移入事件
+		$(".menu span").mouseenter(function(){
+			// 让当前的菜单设置current样式
+			// $(this).addClass("current").siblings().removeClass("current");
+			// 获取当前事件源所在同胞兄弟的序号
+			// var index = $(this).index();
+			//alert(index);
+         	// 让当前菜单对应的内容显示 其他隐藏
+         	// $(".content div").eq(index).addClass('current').siblings().removeClass("current");
+			
+			// 链式编程（连续打点）
+			console.log($(this).addClass("current").siblings().removeClass("current"));
+			$(this).addClass("current").siblings().removeClass("current").parent().siblings().children().eq($(this).index()).addClass("current").siblings().removeClass("current");
+		});
+	</script>
+</body>
+</html>

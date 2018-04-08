@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 60px;height: 60px;background-color: yellow;position: absolute;top: 100;left: 100px;animation: run 10s linear 0s;}
+		/*定义动画*/
+		/*@-webkit-keyframes run{
+			from{
+				left: 100px;
+			}
+			to{
+				left: 600px;
+			}
+		}*/
+		/*百分比定义动画*/
+		@-webkit-keyframes run{
+			0%{
+				left: 100px;
+			}
+			90%{
+				left: 150px;
+			}
+			100%{
+				left: 600px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

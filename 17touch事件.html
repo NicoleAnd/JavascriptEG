@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name=viewport content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+</head>
+<body>
+	<p class="wrap"></p>
+	<script type="text/javascript">
+		// 获取p元素
+		var p1 = document.querySelector(".wrap");
+		var num = 0;
+		// 触摸开始
+		// document.addEventListener("touchstart",function(){
+		// 	p1.innerHTML = "有人碰我了";
+		// },false);
+		// // 触摸移动
+		// document.addEventListener("touchmove",function(){
+		// 	p1.innerHTML = "我正在移动"+num;
+		// 	num++;
+		// },false);
+		// // 触摸结束
+		// document.addEventListener("touchend",function(){
+		// 	p1.innerHTML = "结束触摸";
+		// },false);
+		// 触摸开始
+		document.addEventListener("touchstart",function(event){
+			p1.innerHTML = "有人碰我了";
+			console.log(event.touches[0]);
+			console.log(event.touches.length);
+		},false);
+		// 触摸移动
+		document.addEventListener("touchmove",function(){
+			// p1.innerHTML = "我正在移动"+num;
+			// num++;
+			p1.innerHTML = event.touches[0].clientX +" * "+ event.touches[0].clientY;
+		},false);
+		// 触摸结束
+		document.addEventListener("touchend",function(){
+			p1.innerHTML = "结束触摸";
+		},false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	    div {
+	    	position: absolute;
+	    	left: 0;
+	    	top: 0;
+	    	width: 120px;
+	    	height: 120px;
+	    	background: #f00;
+	    }
+	</style>
+</head>
+<body>
+	<div></div>
+	<script type="text/javascript">
+		// 找到div
+		var oDiv = document.getElementsByTagName("div")[0];
+
+		// 拖拽 鼠标按下---->鼠标移动
+		// 监听里放监听 
+		oDiv.onmousedown = function(event){
+			// 高版本||低版本ie
+			var event = event || window.event;
+        	 // 鼠标按下的时候 记住鼠标在盒子中的位置 
+        	 var deltaX = event.clientX - oDiv.offsetLeft;
+        	 var deltaY = event.clientY - oDiv.offsetTop;
+        	 // 给整个文档添加mousemove事件，鼠标移动时候触发
+        	 document.onmousemove = function(event) {
+                  oDiv.style.left =  event.clientX - deltaX + "px"; 
+                  oDiv.style.top =  event.clientY -deltaY + "px";
+        	 }
+
+		}
+		// 鼠标抬起移动事件取消 松手返回原位置 
+        document.onmouseup = function() {
+        	// 设置为null 删除了监听 
+        	document.onmousemove = null;
+        }
+	</script>
+</body>
+</html>

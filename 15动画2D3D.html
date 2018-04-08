@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform</title>
+	<style type="text/css">
+		img{width:200px;}
+		.one {transform:rotate(30deg);transition: all 1s ease 0s;}
+		.one:hover {transform: rotate(360deg);}
+		.two {transform: scaleX(0.1) scaleY(1);transition: all 1s ease 0s;}
+		.two:hover {transform: scale(1,1);}
+		.three {border: 1px solid #000;transform: skew(50deg,20deg);transition: all 1s ease 0s;}
+		.three:hover{transform: none;}
+		.four {border: 1px solid #000;transform: skew(50deg,20deg) scale(2,0.2) rotate(40deg);transition: all 1s ease 0s;}
+		.four:hover{transform: none;}
+		
+		.zfive{width:258px;height: 258px;border: 1px solid #000;margin:100px;
+			/* 你的眼睛到div的距离 */
+			perspective: 600px;}
+		.five{border:1px solid #000;transform: rotateY(40deg);transition: all 1s ease 0s;}
+		.zfive:hover img{transform: none;}
+
+		.zsix{width:258px;height: 258px;border: 1px solid #000;margin:100px;
+			/* 你的眼睛到div的距离 */
+			perspective: 600px;}
+		.six{border:1px solid #000;transform:rotateX(90deg) rotateY(90deg);transition: all 5s ease 0s;}
+		.zsix:hover img{transform: none;}
+
+		.zseven{width:258px;height: 258px;border: 1px solid #000;margin:100px;
+			/* 你的眼睛到div的距离 */
+			perspective: 600px;}
+		.seven{border:1px solid #000;transform:rotateZ(90deg) rotateX(90deg) rotateY(90deg);transition: all 5s ease 0s;}
+		.zseven:hover img{transform: none;}
+
+		.zeight{width:258px;height: 258px;border: 1px solid #000;margin:100px;
+			/* 你的眼睛到div的距离 */
+			perspective: 600px;}
+		.eight{border:1px solid #000;transform:rotateY(0deg);transition: all 1s ease 0s;
+			backface-visibility: hidden;}
+		.zeight:hover img{transform: rotateY(360deg);}
+	</style>
+</head>
+<body>
+	<h1>2D变形</h1>
+	<img class="one" src="15img/tree.png" alt="" />
+	<img class="two" src="15img/tree.png" alt="" />
+	<img class="three" src="15img/tree.png" alt="" />
+	<img class="four" src="15img/tree.png" alt="" />
+	<h1>3D变形</h1>
+	<div class="zfive">
+		<img class="five" src="15img/tree.png" alt="" />
+	</div>
+	<div class="zsix">
+		<img class="six" src="15img/tree.png" alt="" />
+	</div>
+	<div class="zseven">
+		<img class="seven" src="15img/tree.png" alt="" />
+	</div>
+	<h1>3D变形背面不可见</h1>
+	<div class="zeight">
+		<img class="eight" src="15img/tree.png" alt="" />
+	</div>
+</body>
+</html>

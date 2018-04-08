@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 60px;height: 60px;background-color: #ccc;float: left;margin: 10px;}
+	</style>
+</head>
+<body>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+	
+	<script type="text/javascript" src="lib/zeptoWithFX.js"></script>
+	<script type="text/javascript">
+		$("div").animate({
+			"height":"400px",
+			"background-color":"orange",
+			"transform":"rotate(45deg)"
+		},2000,"ease",function(){
+			$(this).css("background-color","red");
+		});
+	</script>
+</body>
+</html>

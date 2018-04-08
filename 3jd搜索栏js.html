@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>jd搜索栏js</title>
+</head>
+<body>
+	<input type="text" value="表单元素" id="txt">
+	<script type="text/javascript">
+		//事件函数很重要 
+		var txt = document.getElementById('txt');
+		// 获取焦点
+		txt.onfocus = function(){
+			// 清空文字
+			if (txt.value == '表单元素') {
+				txt.value = "";
+			}
+			
+		}
+		// 失去焦点
+		txt.onblur = function(){
+			// 当用户获取焦点时为空
+			if (txt.value == '') {
+				txt.value = "表单元素";
+			}
+			
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

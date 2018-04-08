@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animate案例</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.lov{position: fixed;right: 0;bottom:0;width: 228px;height: 405px;}
+		.lov a{position: absolute;left: 0;top: 0;width: 40px;height: 40px;background: url(11img/dota_jian.png) no-repeat;}
+		.lov a.current{background: url(11img/dota_jia.png) no-repeat;}
+	</style>
+</head>
+<body>
+	<div class="lov">
+		<a href="#" id="btn"></a>
+		<img src="11img/dota_box.png">
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		var temp = 0;
+		$("#btn").click(function(){
+			if (temp == 0) {
+				// 实现动画
+				$(this).parent().animate({
+					'height':'45px'
+				},1000);
+				$(this).parent().animate({
+					'width':'45px'
+				},1000,function(){
+					// 让a元素增加类样式
+					$('#btn').addClass('current');
+				});
+				temp = 1;
+			}else{
+				$(this).parent().animate({
+					'width':'228px'
+				},1000);
+				$(this).parent().animate({
+					'height':'405px'
+				},1000,function(){
+					// 让a元素增加类样式
+					$('#btn').removeClass('current');
+				});
+				temp = 0;
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{position: absolute;left: 0;top: 0;width: 120px;height: 120px;background: skyblue;}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script type="text/javascript">
+		// 找到div
+		var oDiv = document.getElementsByTagName("div")[0];
+
+		// 给整个文档添加mousemove事件，鼠标移动时候触发
+		document.onmousemove = function(event){
+			// clientX clientY
+			oDiv.style.left = event.clientX - oDiv.offsetWidth/2 + "px";
+			oDiv.style.top = event.clientY - oDiv.offsetHeight/2 + "px";
+		}
+	</script>
+</body>
+</html>
