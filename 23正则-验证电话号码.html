@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+	    var tel = prompt("请输入本地电话号码");
+	    // 验证电话号码  010-45612378 0552-45788965
+	    var reg = /^0\d{2,3}-\d{8}$/;
+	    if (reg.test(tel)) {
+	        alert("right");
+	    } else {
+	        alert("wrong");
+	    }
+    </script>
+</body>
+
+</html>

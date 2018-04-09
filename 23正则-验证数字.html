@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		// 验证是否为数字
+		// 1 得到用户输入的数字
+		var num = prompt("请输入一个数字");
+
+		// 2 定义正则 123.33   123 0   -13444  -13.444  11 0.1 13.001 0.001  20.1  2088800.1  13.0  13.45.68 14
+		var reg = /^-?(0|[1-9][0-9]*)(\.\d+)?$/; //0.*** 120.45 2.46
+		if (reg.test(num)) {
+			alert("输入的是数字");
+		}else{
+			alert("输入的不是数字");
+		}
+	</script>
+</body>
+</html>

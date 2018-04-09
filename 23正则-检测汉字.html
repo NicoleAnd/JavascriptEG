@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	    var str = prompt("请输入两到四位汉字");
+	    var reg = /^[\u4e00-\u9fa5]{2,4}$/;
+	    if(reg.test(str)) {
+	    	alert(true);
+	    } else {
+	    	alert(false);
+	    }
+
+	    // 检测昵称 是否有汉字字母数字下划线组成 6-8位
+	    var reg2 = /^([\u4e00-\u9fa5]|[a-zA-Z])\w{5,7}$/;
+	</script>
+</body>
+</html>
