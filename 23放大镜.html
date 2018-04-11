@@ -38,10 +38,28 @@
 			zoom.style.display = "none";
 			bigPic.style.display = "none";
 		}
-
+		// 大图800*800 大图盒子400*400
+		// 小图350*350 小图放大镜175*175
+		// 放大镜总行程175 大图的总行程400
+		var rate = 400/175;
 		// 鼠标移动
 		smallPic.onmousemove = function(event){
 			event = event || window.event;
+			var x = event.clientX - 87 - smallPic.offsetLeft;
+			var y = event.clientY - 87 - smallPic.offsetTop;
+			if (x < 0) {
+				x = 0;
+			}else if(x > 175){
+				x = 175;
+			}
+			if (y < 0) {
+				y = 0;
+			}else if(y > 175){
+				y = 175;
+			}
+			zoom.style.left = x + "px";
+			zoom.style.top = y + "px";
+			bigPic.style.backgroundPosition = -x*rate+"px "+(-y)*rate+"px";
 		}
 	</script>
 </body>
